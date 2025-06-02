@@ -1,0 +1,36 @@
+# Python általános
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.pkl
+*.log
+*.tmp
+*.swp
+
+# Virtuális környezet
+venv/
+.env/
+.envrc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyTorch vagy modellek
+*.pt
+*.bin
+
+# Kimeneti fájlok
+*.csv
+*.json
+*.tsv
+*.xlsx
+test_predictions.csv
+processed_*.csv
+
+# VS Code
+.vscode/
+
+# Mac és Windows rendszerfájlok
+.DS_Store
+Thumbs.db
