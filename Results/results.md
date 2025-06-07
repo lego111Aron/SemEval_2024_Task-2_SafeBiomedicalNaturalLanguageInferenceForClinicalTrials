@@ -33,7 +33,7 @@
 
 </div>
 
-<img src="bert-base-uncased.png" alt="bert-base-uncased eredmények" width="350" style="margin-top: 0;"/>
+<img src="bert-base-uncased.png" alt="bert-base-uncased eredmények" width="450" style="margin-top: 0; float: right;"/>
 
 </div>
 
@@ -70,7 +70,7 @@
 
 </div>
 
-<img src="emilyalsentzer-Bio_ClinicalBERT.png" alt="emilyalsentzer/Bio_ClinicalBERT eredmények" width="350" style="margin-top: 0;"/>
+<img src="emilyalsentzer-Bio_ClinicalBERT.png" alt="emilyalsentzer/Bio_ClinicalBERT eredmények" width="450" style="margin-top: 0; float: right;"/>
 
 </div>
 
@@ -107,7 +107,7 @@
 
 </div>
 
-<img src="dmis-lab-biobert-base-cased-v1.1.png" alt="dmis-lab/biobert-base-cased-v1.1 eredmények" width="350" style="margin-top: 0;"/>
+<img src="dmis-lab-biobert-base-cased-v1.1.png" alt="dmis-lab/biobert-base-cased-v1.1 eredmények" width="450" style="margin-top: 0; float: right;"/>
 
 </div>
 
