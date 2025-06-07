@@ -110,3 +110,67 @@ Telepítettük a szükséges könyvtárakat:
 ---
 
 Szeretnél hozzá egy `.py` scriptet vagy `.ipynb` verziót is a jövőbeli gyorsabb használathoz? Szívesen összefoglalom abban is!
+
+---
+---
+
+A jelenlegi megoldásod a SemEval2024_Task2_NLI.ipynb fájlban **alapvetően megfelel** a feladat fő követelményeinek, de néhány fontos szempontot érdemes figyelembe venni a teljes megfeleléshez:
+
+---
+
+## ✔️ Amit a notebookod már tud:
+- **Input feldolgozás**: A CTR szakaszokat és állításokat összefűzi, előállítja az `input_text` mezőt.
+- **Címkék**: A három címkét (Entailment, Neutral, Contradiction) kezeli.
+- **Tokenizálás, modell betöltés**: HuggingFace BERT-alapú modell, tokenizálás, GPU támogatás.
+- **Tanítás, értékelés**: Modell tanítása, validáció, F1 és accuracy metrikák számítása.
+- **Predikció**: Teszthalmazra predikció, eredmények mentése CSV-be.
+
+---
+
+## ⚠️ Amit a feladat (és a hivatalos értékelés) még elvár(na):
+
+1. **Kimeneti címkék**:  
+   - A baseline notebookod három címkével dolgozik (`Entailment`, `Neutral`, `Contradiction`), de a *részletes összefoglaló* szerint a végső értékelés **bináris** (`Entailment` vagy `Contradiction`).  
+   - Ha a végső értékelés bináris, a `Neutral` predikciókat át kell alakítani valamelyik osztályba (pl. `Contradiction`), vagy a modellt eleve binárisra kell tanítani.
+
+2. **Faithfulness & Consistency metrikák**:  
+   - A notebookod csak klasszikus F1-et és accuracy-t számol, de a versenyen **külön értékelik a Faithfulness és Consistency** mutatókat is, amelyek a perturbed példákra vonatkoznak.
+   - Ezekhez szükséges lenne a predikciók utólagos elemzése az intervenció típusok szerint (preserving/altering), és a metrikák kiszámítása.
+
+3. **Intervenció típusok kezelése**:  
+   - A notebookod nem tartalmaz explicit logikát az intervenció típusok (paraphrase, contradiction, numerical, appended text stb.) felismerésére vagy kezelésére.
+   - A Faithfulness/Consistency számításhoz szükséges, hogy a dev/test példákhoz tartozó intervenció típusokat ismerd (ez általában az adathalmazban szerepel).
+
+4. **Baseline/Leaderboard kompatibilitás**:  
+   - A végső predikciós fájl formátuma, elnevezése, és a mezők elnevezése feleljen meg a versenykiírásnak (pl. `results.json` vagy hasonló, ha azt várják el).
+
+---
+
+## 📝 **Mit kell(ene) még megvalósítanod?**
+
+1. **Faithfulness és Consistency metrikák számítása**  
+   - Implementáld a notebook végén a predikciók utólagos kiértékelését az intervenció típusok szerint.
+   - Számold ki:  
+     - **Faithfulness**: altering példákon, hogy a predikció változott-e.
+     - **Consistency**: preserving példákon, hogy a predikció változatlan maradt-e.
+
+2. **Bináris címkézés (ha szükséges)**  
+   - Ha a végső értékelés bináris, módosítsd a címkézést és a modellt is binárisra (2 osztály), vagy a predikciókat konvertáld.
+
+3. **Predikciós fájl formátum**  
+   - Ellenőrizd, hogy a mentett predikciós fájl megfelel-e a verseny elvárásainak (pl. JSON formátum, megfelelő kulcsok).
+
+4. **Intervenció típusok beolvasása**  
+   - Ha az adathalmaz tartalmazza az intervenció típusát, olvasd be, és használd a Faithfulness/Consistency számításához.
+
+---
+
+## 📌 **Összefoglalva**
+
+- **A fő pipeline helyes** (feldolgozás, tanítás, predikció, F1).
+- **A hivatalos értékeléshez** szükséges a Faithfulness és Consistency metrikák implementálása, valamint a bináris címkézés ellenőrzése.
+- **A predikciós fájl formátumát** igazítsd a versenykiíráshoz.
+
+---
+
+Ha szeretnéd, szívesen mutatok példát a Faithfulness/Consistency számítására vagy a bináris címkézésre a notebookod alapján!
