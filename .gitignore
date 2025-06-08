@@ -36,3 +36,4 @@ processed_*.csv
 Thumbs.db
 
 Results/bert-base-uncased_2025-06-08/
+Results/bert-base-uncased_2025-06-08_optimized/
