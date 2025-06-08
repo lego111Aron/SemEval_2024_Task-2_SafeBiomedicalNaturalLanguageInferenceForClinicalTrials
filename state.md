@@ -174,3 +174,58 @@ A jelenlegi megoldásod a SemEval2024_Task2_NLI.ipynb fájlban **alapvetően meg
 ---
 
 Ha szeretnéd, szívesen mutatok példát a Faithfulness/Consistency számítására vagy a bináris címkézésre a notebookod alapján!
+
+----------------
+----------------
+
+Úgy látom a notebookodban megvannak az alapok (betöltöd az eredeti train/dev/test adatokat, finomhangolod a modellt és kiszámolod a Macro-F1-et az eredeti teszten), viszont **nem** találtam benne:
+
+1. **Az NLI4CT-P kontrasztkészlet betöltését**
+
+   * A teszt- és dev-állításokhoz tartozó perturbed változatok (paraphrase, contradiction, numerical paraphrase/contradiction, appended text) nincsenek beolvasva. Ezek nélkül nem tudod kiszámolni a 2. és 3. pontban szükséges metrikákat.
+
+2. **Consistency metrika számítása**
+
+   * Azokon a példákon, ahol a perturbáció *nem* változtatja az állítás jelentését (paraphrase, numerical paraphrase, appended text), ellenőrizned kell, hogy a predikció *azonos* marad-e az eredetivel.
+   * Formális definíció:
+
+     ```
+     Consistency = (1/N_preserving) * Σ_i [ 1{f(original_i) == f(perturbed_i)} ]
+     ```
+
+3. **Faithfulness metrika számítása**
+
+   * Azokon a példákon, ahol a perturbáció *megváltoztatja* az állítás jelentését (contradiction rephrasing, numerical contradiction), ellenőrizned kell, hogy a predikció *változik*-e az eredetihez képest.
+   * Formális definíció:
+
+     ```
+     Faithfulness = (1/N_altering) * Σ_i [ 1{f(original_i) != f(perturbed_i)} ]
+     ```
+
+4. **Eredmények riportálása a két új metrikára**
+
+   * A SemEval-feladatban nem elég csak a Macro-F1 a „control” eredeti adatokon, a kontrasztkészleten is mutatnod kell Consistency és Faithfulness értékeket, külön bontva perturbáció-típusok szerint (vagy legalább összesítve).
+
+---
+
+### Mit kell hozzáadnod a notebookhoz
+
+* **Perturbed adatok betöltése**
+
+  * A dev/test JSON-ek mellett beolvasod a `dev_perturbed.json` és `test_perturbed.json` fájlokat (vagy az azokból generált Pandas DataFrame-eket), ahol minden perturbed állításhoz megkapod az eredeti páros UUID-ját és a perturbáció típusát.
+
+* **Predikciók generálása perturbed állításokra**
+
+  * Ugyanazzal a finomhangolt modelleddel végigmész a perturbed set-en is, és elmented mind az eredeti, mind a perturbed predikciókat.
+
+* **Consistency és Faithfulness kiszámítása**
+
+  * Csoportosítod a perturbed példákat preserving vs altering típusokra, és az előbbi csoportnál nézed a predikció megegyezését, az utóbbinál az eltérést.
+
+* **Összefoglaló táblázatot/plotot** készítesz, ahol látható:
+
+  * Macro-F1 (eredeti adatokon)
+  * Consistency (preserving perturbációkon)
+  * Faithfulness (altering perturbációkon)
+
+Ha ezeket a lépéseket beépíted a notebookodba, teljes lesz a feladatmegoldásod a SemEval-2024 Task 2 elvárásai alapján (az eredmények beküldése nélkül). Ha szeretnéd, megmutatom a konkrét kódvázlatot is a metrikákra.
