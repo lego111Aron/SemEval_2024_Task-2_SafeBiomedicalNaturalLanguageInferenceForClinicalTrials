@@ -347,3 +347,43 @@ Nagyon jól indult, de az 5. epoch után nem tanult csupán romlott az eredmény
 </div>
 
 <hr style="border: 2px solid #333; margin: 24px 0;"/>
+
+
+<div style="font-size:20px; font-weight:600; color:#8ab5cc; margin-bottom:8px;">bionlp/bluebert_pubmed_mimic_uncased_L-12_H-768_A-12</div>
+
+**Modell:** `bionlp/bluebert_pubmed_mimic_uncased_L-12_H-768_A-12`  
+**Paraméterek:**
+- **Tanulási ráta:** `1e-5`
+- **Batch méret:** `8`
+- **Epochok száma:** `10`
+- **Weight decay:** `0.001`
+
+<div style="display: flex; align-items: flex-start; gap: 32px;">
+  <div>
+
+### Eredmények
+| **Metrika**     | **Érték** |
+|-----------------|-----------|
+| Pontosság       | -         |
+| F1-macro        | -         |
+| Veszteség       | -         |
+| Epoch           | -         |
+
+- **Futtatási idő:** `- mp`  
+- **Minták/másodperc:** `-`  
+- **Lépések/másodperc:** `-`
+
+  </div>
+  <img src="-.png" alt="bionlp/bluebert_pubmed_mimic_uncased_L-12_H-768_A-12 optimalizált eredmény" width="450" style="margin-top: 0; margin-left: auto; display: block; float: right; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+</div>
+
+### Megjegyzések
+
+A futást félbeszakítottam, mert a pontosság az 5. epoch-nál már visszaesett 50% alá
+
+<div style="display: flex; justify-content: space-between; gap: 24px; margin: 0 2vw 32px 2vw;">
+    <img src="-.png" alt="bionlp/bluebert_pubmed_mimic_uncased_L-12_H-768_A-12_optimized_Loss" style="width: 49%; max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+    <img src="-.png" alt="bionlp/bluebert_pubmed_mimic_uncased_L-12_H-768_A-12_optimized_Accuracy" style="width: 49%; max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+</div>
+
+<hr style="border: 2px solid #333; margin: 24px 0;"/>
