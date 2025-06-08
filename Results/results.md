@@ -299,11 +299,51 @@ A mostani futás stabilabb, kevésbé overfitel, és a teljesítménye legalább
 
 ### Megjegyzések
 
-A mostani futás stabilabb, kevésbé overfitel, és a teljesítménye legalább olyan jó, mint az előzőé.
+Stabil növekedést mutatott, de nem várható további jelentős javulás
 
 <div style="display: flex; justify-content: space-between; gap: 24px; margin: 0 2vw 32px 2vw;">
     <img src="dmis-lab-biobert-base-cased-v1.1_optimized_Loss.png" alt="dmis-lab-biobert-base-cased-v1.1_optimized_Loss" style="width: 49%; max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
     <img src="dmis-lab-biobert-base-cased-v1.1_optimized_Accuracy.png" alt="dmis-lab-biobert-base-cased-v1.1_optimized_Accuracy" style="width: 49%; max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+</div>
+
+<hr style="border: 2px solid #333; margin: 24px 0;"/>
+
+
+<div style="font-size:20px; font-weight:600; color:#8ab5cc; margin-bottom:8px;">microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract optimalizált paraméterek</div>
+
+**Modell:** `microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract`  
+**Paraméterek:**
+- **Tanulási ráta:** `1e-5`
+- **Batch méret:** `8`
+- **Epochok száma:** `10`
+- **Weight decay:** `0.001`
+
+<div style="display: flex; align-items: flex-start; gap: 32px;">
+  <div>
+
+### Eredmények
+| **Metrika**     | **Érték** |
+|-----------------|-----------|
+| Pontosság       | 0.62      |
+| F1-macro        | 0.62      |
+| Veszteség       | 0.65      |
+| Epoch           | 10        |
+
+- **Futtatási idő:** `5.05 mp`  
+- **Minták/másodperc:** `39.62`  
+- **Lépések/másodperc:** `4.95`
+
+  </div>
+  <img src="microsoft-BiomedNLP-optimized.png" alt="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract optimalizált eredmény" width="450" style="margin-top: 0; margin-left: auto; display: block; float: right; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+</div>
+
+### Megjegyzések
+
+Nagyon jól indult, de az 5. epoch után nem tanult csupán romlott az eredmény
+
+<div style="display: flex; justify-content: space-between; gap: 24px; margin: 0 2vw 32px 2vw;">
+    <img src="microsoft-BiomedNLP-optimized_Loss.png" alt="microsoft-BiomedNLP-PubMedBERT-base-uncased-abstract_optimized_Loss" style="width: 49%; max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+    <img src="microsoft-BiomedNLP-optimized_Accuracy.png" alt="microsoft-BiomedNLP-PubMedBERT-base-uncased-abstract_optimized_Accuracy" style="width: 49%; max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
 </div>
 
 <hr style="border: 2px solid #333; margin: 24px 0;"/>
