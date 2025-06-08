@@ -34,3 +34,10 @@ processed_*.csv
 # Mac és Windows rendszerfájlok
 .DS_Store
 Thumbs.db
+
+Results/bert-base-uncased_2025-06-08/
+Results/bert-base-uncased_2025-06-08_optimized/
+Results/emilyalsentzer-Bio_ClinicalBERT_optimized/
+Results/dmis-lab-biobert-base-cased-v1.1_optimized/
+Results/microsoft-BiomedNLP-PubMedBERT-base-uncased-abstract_optimized/
+Results/bionlp-bluebert_pubmed_mimic_uncased_L-12_H-768_A-12/
