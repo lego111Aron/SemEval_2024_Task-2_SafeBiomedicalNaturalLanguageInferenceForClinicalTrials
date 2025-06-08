@@ -349,6 +349,46 @@ Nagyon jól indult, de az 5. epoch után nem tanult csupán romlott az eredmény
 <hr style="border: 2px solid #333; margin: 24px 0;"/>
 
 
+<div style="font-size:20px; font-weight:600; color:#8ab5cc; margin-bottom:8px;">microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract optimalizált paraméterek 2</div>
+
+**Modell:** `microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract`  
+**Paraméterek:**
+- **Tanulási ráta:** `5e-6`
+- **Batch méret:** `8`
+- **Epochok száma:** `10`
+- **Weight decay:** `0.001`
+
+<div style="display: flex; align-items: flex-start; gap: 32px;">
+  <div>
+
+### Eredmények
+| **Metrika**     | **Érték** |
+|-----------------|-----------|
+| Pontosság       | 0.62      |
+| F1-macro        | 0.61      |
+| Veszteség       | 0.66      |
+| Epoch           | 10        |
+
+- **Futtatási idő:** `5.33 mp`  
+- **Minták/másodperc:** `37.54`  
+- **Lépések/másodperc:** `4.69`
+
+  </div>
+  <img src="microsoft-BiomedNLP-optimized2.png" alt="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract optimalizált eredmény" width="450" style="margin-top: 0; margin-left: auto; display: block; float: right; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+</div>
+
+### Megjegyzések
+
+Egy kicsit rosszabb mint volt
+
+<div style="display: flex; justify-content: space-between; gap: 24px; margin: 0 2vw 32px 2vw;">
+    <img src="microsoft-BiomedNLP-optimized_Loss2.png" alt="microsoft-BiomedNLP-PubMedBERT-base-uncased-abstract_optimized_Loss" style="width: 49%; max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+    <img src="microsoft-BiomedNLP-optimized_Accuracy2.png" alt="microsoft-BiomedNLP-PubMedBERT-base-uncased-abstract_optimized_Accuracy" style="width: 49%; max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+</div>
+
+<hr style="border: 2px solid #333; margin: 24px 0;"/>
+
+
 <div style="font-size:20px; font-weight:600; color:#8ab5cc; margin-bottom:8px;">bionlp/bluebert_pubmed_mimic_uncased_L-12_H-768_A-12</div>
 
 **Modell:** `bionlp/bluebert_pubmed_mimic_uncased_L-12_H-768_A-12`  
