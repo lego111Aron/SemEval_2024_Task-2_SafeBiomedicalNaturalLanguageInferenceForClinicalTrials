@@ -267,3 +267,43 @@ A mostani futás stabilabb, kevésbé overfitel, és a teljesítménye legalább
 </div>
 
 <hr style="border: 2px solid #333; margin: 24px 0;"/>
+
+
+<div style="font-size:20px; font-weight:600; color:#8ab5cc; margin-bottom:8px;">dmis-lab/biobert-base-cased-v1.1 optimalizált paraméterek</div>
+
+**Modell:** `dmis-lab/biobert-base-cased-v1.1`  
+**Paraméterek:**
+- **Tanulási ráta:** `1e-5`
+- **Batch méret:** `8`
+- **Epochok száma:** `10`
+- **Weight decay:** `0.001`
+
+<div style="display: flex; align-items: flex-start; gap: 32px;">
+  <div>
+
+### Eredmények
+| **Metrika**     | **Érték** |
+|-----------------|-----------|
+| Pontosság       | 0.57      |
+| F1-macro        | 0.52      |
+| Veszteség       | 0.68      |
+| Epoch           | 10        |
+
+- **Futtatási idő:** `5.31 mp`  
+- **Minták/másodperc:** `37.69`  
+- **Lépések/másodperc:** `4.71`
+
+  </div>
+  <img src="dmis-lab-biobert-base-cased-v1.1_optimized.png" alt="dmis-lab/biobert-base-cased-v1.1 optimalizált eredmény" width="450" style="margin-top: 0; margin-left: auto; display: block; float: right; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+</div>
+
+### Megjegyzések
+
+A mostani futás stabilabb, kevésbé overfitel, és a teljesítménye legalább olyan jó, mint az előzőé.
+
+<div style="display: flex; justify-content: space-between; gap: 24px; margin: 0 2vw 32px 2vw;">
+    <img src="dmis-lab-biobert-base-cased-v1.1_optimized_Loss.png" alt="dmis-lab-biobert-base-cased-v1.1_optimized_Loss" style="width: 49%; max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+    <img src="dmis-lab-biobert-base-cased-v1.1_optimized_Accuracy.png" alt="dmis-lab-biobert-base-cased-v1.1_optimized_Accuracy" style="width: 49%; max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px #0001;"/>
+</div>
+
+<hr style="border: 2px solid #333; margin: 24px 0;"/>
