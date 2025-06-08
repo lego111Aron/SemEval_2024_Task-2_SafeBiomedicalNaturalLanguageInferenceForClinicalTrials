@@ -34,3 +34,5 @@ processed_*.csv
 # Mac és Windows rendszerfájlok
 .DS_Store
 Thumbs.db
+
+Results/bert-base-uncased_2025-06-08/
